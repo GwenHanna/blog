@@ -21,9 +21,11 @@ class AppFixtures extends Fixture
             $article = new Article();
             $article
                 ->setTitle($fake->realTextBetween(40))
-                ->setContent($fake->realText(500))
+                ->setContent($fake->realText(1000))
                 ->setDateCreated(new DateTime())
-                ->setVisible($fake->boolean(5));
+                ->setVisible($fake->boolean(5))
+                ->setDescription($fake->realText(500))
+                ->setImg($fake->imageUrl());
             $manager->persist($article);
         }
 

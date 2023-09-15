@@ -24,9 +24,11 @@
 			{% block nav %}
 				{% include "nav.html.twig" %}
 			{% endblock %}
-			{% block header %}{% endblock %}
-
 		</header>
-		{% block body %}{% endblock %}
-	</body>
-</html>
+		<div class="container"> {% block header %}{% endblock %}
+			</div>
+			<div class="container"> {% block img %}{% endblock %}
+				</div>
+				{% block body %}{% endblock %}
+			</body>
+		</html>
