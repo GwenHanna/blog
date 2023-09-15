@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+	<div class="container">
+
+		<h1 class="h1 text-center text-uppercase mb-5">
+			{{name}}
+		</h1>
+		<span>
+			<em>
+				{{article.dateCreated|date('d:M:Y')}}
+			</em>
+		</span>
+	</div>
+
+
+	<div class="container">
+		<p>
+			{{article.content}}
+		</p>
+	</div>
+{% endblock %}

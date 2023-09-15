@@ -1,8 +1,32 @@
 {% extends 'base.html.twig' %}
 
+{% block header %}
+	<h1 class="h1 text-center text-uppercase mb-3">{{name}}</h1>
+{% endblock %}
+
 
 {% block body %}
 
-
-	<div class="example-wrapper"></div>
+	<div class="container-sm d-flex justify-content-center flex-wrap gap-3">
+		{% for article in articles %}
+			<div
+				class="card" style="width: 18rem;">
+				{# <img src="..." class="card-img-top" alt="..."> #}
+				<div class="card-body">
+					<h5 class="card-title">
+						{{article.title}}
+					</h5>
+					<span>
+						<em>
+							{{ article.dateCreated|date('j/m/Y H:i') }}
+						</em>
+					</span>
+					<p class="card-text">
+						{{article.content}}
+					</p>
+					<a href=" {{ path('app_article_detail', {'id':article.id}) }} " class="btn btn-primary">Voir plus...</a>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
 {% endblock %}

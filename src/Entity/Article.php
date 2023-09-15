@@ -58,24 +58,24 @@ class Article
         return $this;
     }
 
-    public function getDateCreated(): ?\DateTimeInterface
+    public function getDateCreated(): ?\DateTime
     {
         return $this->dateCreated;
     }
 
-    public function setDateCreated(\DateTimeInterface $dateCreated): static
+    public function setDateCreated(\DateTime $dateCreated): static
     {
         $this->dateCreated = $dateCreated;
 
         return $this;
     }
 
-    public function getDateUp(): ?\DateTimeInterface
+    public function getDateUp(): ?\DateTime
     {
         return $this->date_up;
     }
 
-    public function setDateUp(?\DateTimeInterface $date_up): static
+    public function setDateUp(?\DateTime $date_up): static
     {
         $this->date_up = $date_up;
 
