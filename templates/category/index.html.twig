@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+	<div class="container d-flex flex-wrap justify-content-around">
+
+		{% for article in articles %}
+
+			<div class="card" style="width: 18rem;">
+				<img src=" {{img}} " class="card-img-top" alt="{{article.title}}">
+				<div class="card-body">
+					<h5 class="card-title">{{article.title}}</h5>
+					<blockquote class="card-text">
+						{{article.description}}
+					</blockquote>
+					<p class="card-text">
+						{{article.dateCreated|date('D:M:Y')}}
+					</p>
+				</div>
+				<div class="card-body">
+					<a href=" {{ path('app_article_detail', {'id':article.id}) }} " class="card-link">Voir plus</a>
+
+				</div>
+			</div>
+
+		{% endfor %}
+	</div>
+{% endblock %}

@@ -33,7 +33,7 @@ class AppFixtures extends Fixture
             $article
                 ->setTitle($fake->realTextBetween(40))
                 ->setContent($fake->realText(1000))
-                ->setDateCreated(new DateTime())
+                ->setDateCreated($fake->dateTime())
                 ->setVisible($fake->boolean(5))
                 ->setDescription($fake->realText(500))
                 ->setImg($fake->imageUrl())
