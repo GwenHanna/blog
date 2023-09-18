@@ -35,6 +35,11 @@ class Article
     #[ORM\Column]
     private ?bool $visible = null;
 
+    #[ORM\ManyToOne(inversedBy: 'category')]
+    private ?Category $category = null;
+
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,6 +125,18 @@ class Article
     public function setVisible(bool $visible): static
     {
         $this->visible = $visible;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): static
+    {
+        $this->category = $category;
 
         return $this;
     }

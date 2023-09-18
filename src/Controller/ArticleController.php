@@ -17,7 +17,6 @@ class ArticleController extends AbstractController
         return $this->render('article/index.html.twig', [
             'name' => 'Article',
             'articles'  => $articles,
-            // 'date'      => $date
         ]);
     }
 }
